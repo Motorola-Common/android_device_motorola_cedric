@@ -16,7 +16,7 @@
 
 DEVICE_PATH := device/motorola/potter
 
-TARGET_RECOVERY_DEVICE_DIRS := $(DEVICE_PATH)
+#TARGET_RECOVERY_DEVICE_DIRS := $(DEVICE_PATH)
 
 TARGET_ARCH := arm
 TARGET_CPU_ABI  := armeabi-v7a
@@ -37,15 +37,17 @@ TARGET_NO_BOOTLOADER := true
 #TARGET_PREBUILT_KERNEL := $(DEVICE_PATH)/boot.img-zImage
 #TARGET_PREBUILT_DTB := $(DEVICE_PATH)/boot.img-dt
 
-BOARD_KERNEL_CMDLINE := androidboot.hardware=qcom ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci vmalloc=350M androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom user_debug=30 msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 vmalloc=350M androidboot.selinux=permissive
 BOARD_KERNEL_BASE := 0x80000000
-BOARD_KERNEL_SEPARATED_DT := true
-BOARD_RAMDISK_OFFSET := 0x01000000
 BOARD_KERNEL_PAGESIZE := 2048
-BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000
-BOARD_CUSTOM_BOOTIMG_MK := $(DEVICE_PATH)/mkbootimg.mk
-KERNEL_TOOLCHAIN_PREFIX := arm-linux-androidkernel-
-TARGET_KERNEL_CONFIG := addison_potter
+BOARD_KERNEL_SEPARATED_DT := true
+
+BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
+
+TARGET_CUSTOM_DTBTOOL := dtbTool_moto
+TARGET_KERNEL_ARCH := arm
+
+TARGET_KERNEL_CONFIG := potter_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8953
 
 BOARD_USES_QCOM_HARDWARE := true
@@ -64,10 +66,14 @@ BOARD_SUPPRESS_SECURE_ERASE := true
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
 TW_INCLUDE_CRYPTO := true
+TARGET_KEYMASTER_WAIT_FOR_QSEE := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
 
 # TWRP
-RECOVERY_SDCARD_ON_DATA := true
+RECOVERY_VARIANT := twrp
+
 TARGET_RECOVERY_FSTAB := device/motorola/potter/twrp.fstab
+RECOVERY_SDCARD_ON_DATA := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGB_565
 TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_USERIMAGES_USE_EXT4 := true
