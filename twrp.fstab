@@ -8,8 +8,8 @@
 /persist      ext4          /dev/block/bootdevice/by-name/persist        flags=fsflags=noatime,nosuid,nodev,barrier=1,noauto_da_alloc;mounttodecrypt
 /firmware     ext4          /dev/block/bootdevice/by-name/modem          flags=fsflags=ro,nosuid,nodev,barrier=0;mounttodecrypt
 /misc         emmc          /dev/block/bootdevice/by-name/misc
-/efs1         emmc          /dev/block/bootdevice/by-name/modemst1       flags=backup=1;wipeingui;display=EFS
-/efs2         emmc          /dev/block/bootdevice/by-name/modemst2       flags=backup=1;wipeingui;subpartitionof=/efs1
+/efs1         emmc          /dev/block/bootdevice/by-name/modemst1       flags=backup=1;display=EFS
+/efs2         emmc          /dev/block/bootdevice/by-name/modemst2       flags=backup=1;subpartitionof=/efs1
 /logo         emmc          /dev/block/bootdevice/by-name/logo           flags=display="logo";backup=1;flashimg=1
 
 /external_sd  vfat          /dev/block/mmcblk1p1  /dev/block/mmcblk1     flags=display="external_sd";storage;wipeingui;removable;fsflags="utf8"
