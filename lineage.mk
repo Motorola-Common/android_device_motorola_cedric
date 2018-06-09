@@ -16,9 +16,13 @@
 
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, device/motorola/cedric/full_cedric.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 
-# Inherit some common CM stuff.
+# Inherit from cedric device
+$(call inherit-product, device/motorola/cedric/device.mk)
+
+# Inherit some common Lineage stuff.
 $(call inherit-product, vendor/lineage/config/common_full_phone.mk)
 
 # Boot animation
@@ -30,6 +34,15 @@ PRODUCT_DEVICE := cedric
 PRODUCT_NAME := lineage_cedric
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
+PRODUCT_MODEL := Moto G5
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
+
+PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.model
+
+PRODUCT_BUILD_PROP_OVERRIDES += \
+    PRODUCT_NAME="Moto G5"
+
+# for specific
+$(call inherit-product, vendor/motorola/cedric/cedric-vendor.mk)
