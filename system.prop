@@ -3,11 +3,10 @@
 #
 
 # Camera
-persist.camera.is_type=1
-persist.camera.gyro.android=1
 camera.display.umax=1920x1080
 camera.display.lmax=1280x720
 persist.camera.max.previewfps=60
+persist.camera.HAL3.enabled=1
 
 # Dalvik
 dalvik.vm.heapstartsize=8m

@@ -22,12 +22,6 @@ PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/audio/audio_ext_spkr.conf:system/vendor/etc/audio_ext_spkr.conf \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:system/vendor/etc/audio_platform_info.xml \
 
-# Camera
-PRODUCT_PACKAGES += \
-    libshim_camera_hal \
-    libshims_camera \
-    camera.msm8937
-
 # Camera Configurations
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/msm8937_mot_camera.xml:system/etc/camera/msm8937_mot_camera.xml \
@@ -55,7 +49,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf \
 
 # Shims
-PRODUCT_PACKAGES += libqsap_shim
+PRODUCT_PACKAGES += \
+    libqsapshim \
+    libshimalsa
 
 # Thermal
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/thermal-engine-cedric.conf:system/vendor/etc/thermal-engine.conf
