@@ -43,11 +43,6 @@ BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3455451136    #  3428080 * 1024 mmcblk0p53
 # SELinux
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
-# Shims
-TARGET_LD_SHIM_LIBS := \
-    /system/vendor/bin/adspd|libshim_adsp.so \
-    /system/vendor/lib64/libmdmcutback.so|libqsap_shim.so
-
 # inherit from motorola msm8953-common
 -include device/motorola/msm8953-common/BoardConfigCommon.mk
 

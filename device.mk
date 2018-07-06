@@ -48,11 +48,6 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf \
 
-# Shims
-PRODUCT_PACKAGES += \
-    libqsapshim \
-    libshimalsa
-
 # Thermal
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/thermal-engine-cedric.conf:system/vendor/etc/thermal-engine.conf
 
