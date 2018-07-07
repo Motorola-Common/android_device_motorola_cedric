@@ -29,5 +29,9 @@ ro.hwui.text_small_cache_height=1024
 ro.hwui.text_large_cache_width=2048
 ro.hwui.text_large_cache_height=2048
 
+# IMS
 persist.ims.volte=false
 ro.config.hw_volte_on=true
+
+# Radio
+rild.libargs=-d /dev/smd0
