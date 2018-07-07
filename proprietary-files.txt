@@ -403,8 +403,10 @@ vendor/lib/libjpegehw.so
 vendor/lib/libjustshoot.so
 vendor/lib/liblbs_core.so
 vendor/lib/libloc_ext.so
+vendor/lib/libmbs.so
 vendor/lib/libmdsprpc.so
 vendor/lib/libmdtpdemojni.so
+vendor/lib/libmm-qcamera.so
 vendor/lib/libmmcamera2_c2d_module.so
 vendor/lib/libmmcamera2_cpp_module.so
 vendor/lib/libmmcamera2_dcrf.so
@@ -532,6 +534,7 @@ vendor/lib/libmmrtpdecoder.so
 vendor/lib/libmmrtpencoder.so
 vendor/lib/libmmsw_platform.so
 vendor/lib/libmotocalibration.so
+vendor/lib/libmotocalibration.so
 vendor/lib/libmot_gpu_mapper.so
 vendor/lib/libMpeg4SwEncoder.so
 vendor/lib/liboemcrypto.so
@@ -564,6 +567,7 @@ vendor/lib/libslimclient.so
 vendor/lib/libssd.so
 vendor/lib/libStDrvInt.so
 vendor/lib/libSubSystemShutdown.so
+vendor/lib/lib_motsensorlistener.so
 vendor/lib/libsubsystem_control.so
 vendor/lib/libthermalioctl.so
 vendor/lib/libtime_genoff.so
