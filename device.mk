@@ -48,6 +48,15 @@ PRODUCT_PACKAGES += \
 # Sensors
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/sensors/hals.conf:system/etc/sensors/hals.conf \
 
+PRODUCT_PACKAGES += \
+    libsensorhub \
+    motosh \
+    sensorhub.$(TARGET_BOARD_PLATFORM) \
+    sensors.$(TARGET_BOARD_PLATFORM) \
+    sensors.rp \
+    sensors.tof \
+    sensors.tof.vl53l0
+
 # Thermal
 PRODUCT_COPY_FILES += $(LOCAL_PATH)/configs/thermal-engine-cedric.conf:system/vendor/etc/thermal-engine.conf
 
