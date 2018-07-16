@@ -3,7 +3,7 @@ on post-fs
     mkdir /data/.fps 0770 system fingerp
 
     # Imager tuning data for camera subsystem
-    mkdir /data/misc/imager 0770 camera camera
+    mkdir /data/vendor/misc/imager 0770 camera camera
 
 on boot
     # Change permission for fingerprint sensor

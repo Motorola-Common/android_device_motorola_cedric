@@ -1,9 +1,10 @@
 on boot
 
-service loc_launcher /system/bin/loc_launcher
+service loc_launcher /vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
-    group gps inet qcom_diag wifi
+    group gps inet oem_2950 wifi
+    writepid /dev/cpuset/system-background/tasks
 
 on property:sys.boot_completed=1
 
