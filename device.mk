@@ -22,6 +22,10 @@ PRODUCT_COPY_FILES +=  \
     $(LOCAL_PATH)/audio/audio_ext_spkr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/audio_ext_spkr.conf \
     $(LOCAL_PATH)/audio/audio_platform_info.xml:$(TARGET_COPY_OUT_VENDOR)/etc/audio_platform_info.xml \
 
+# Camera
+PRODUCT_PACKAGES += \
+    camera.msm8937
+
 # Camera Configurations
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/msm8937_mot_camera.xml:$(TARGET_COPY_OUT_VENDOR)/etc/camera/msm8937_mot_camera.xml \
