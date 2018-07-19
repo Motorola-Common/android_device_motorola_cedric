@@ -3,7 +3,7 @@ on post-fs
     mkdir /data/.fps 0770 system fingerp
 
     # Imager tuning data for camera subsystem
-    mkdir /data/misc/imager 0770 camera camera
+    mkdir /data/vendor/misc/imager 0770 camera camera
 
 on boot
     # Change permission for fingerprint sensor
@@ -13,6 +13,13 @@ on boot
     chown system oem_5004 /sys/bus/spi/devices/spi6.0/irq
     chown system oem_5004 /sys/bus/spi/devices/spi6.0/irq_cnt
     chmod 0440 /sys/bus/spi/devices/spi6.0/irq_cnt
+
+# Start Sensor daemon
+service motosh /system/vendor/bin/motosh boot
+    class main
+    user compass
+    group compass misc input
+    oneshot
 
 on moto-charger
     setprop ro.board.platform msm8937
