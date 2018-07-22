@@ -17,27 +17,37 @@
 
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Get the prebuilt list of APNs
+$(call inherit-product, vendor/omni/config/gsm.mk)
+
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+
+# Boot animation
+TARGET_BOOTANIMATION_SIZE := 1080p
+
+# Inherit from our custom product configuration
+$(call inherit-product, vendor/omni/config/common.mk)
 
 # Inherit from cedric device
 $(call inherit-product, device/motorola/cedric/device.mk)
 
-# Boot animation
-TARGET_SCREEN_WIDTH := 1080
-TARGET_SCREEN_HEIGHT := 1920
+# Overlays
+DEVICE_PACKAGE_OVERLAYS += device/motorola/cedric/overlay
+DEVICE_PACKAGE_OVERLAYS += device/motorola/msm8953-commmon/overlay
+PRODUCT_PACKAGE_OVERLAYS += vendor/omni/overlay/CarrierConfig
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := cedric
-PRODUCT_NAME := aosp_cedric
+PRODUCT_NAME := omni_cedric
 PRODUCT_BRAND := motorola
 PRODUCT_MANUFACTURER := motorola
-PRODUCT_MODEL := AOSP on Moto G5
 
 PRODUCT_ENFORCE_RRO_TARGETS := \
     framework-res
 
-PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRODUCT_NAME="Moto G5"
+PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=cedric  PRODUCT_NAME="Moto G5"
 
 # for specific
 $(call inherit-product, vendor/motorola/cedric/cedric-vendor.mk)

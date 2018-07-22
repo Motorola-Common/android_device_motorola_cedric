@@ -1,0 +1,50 @@
+[
+{
+  "remote": "omnirom",
+  "repository": "android_hardware_qcom_display-caf-msm8996",
+  "target_path": "hardware/qcom/display-caf-msm8996",
+  "revision": "android-8.1"
+},
+{
+  "remote": "omnirom",
+  "repository": "android_hardware_qcom_audio-caf-msm8996",
+  "target_path": "hardware/qcom/audio-caf-msm8996",
+  "revision": "android-8.1"
+},
+{
+  "remote": "omnirom",
+  "repository": "android_hardware_qcom_media-caf-msm8996",
+  "target_path": "hardware/qcom/media-caf-msm8996",
+  "revision": "android-8.1"
+},
+{
+  "remote": "omnirom",
+  "repository": "vendor_qcom_opensource_dataservices",
+  "target_path": "vendor/qcom/opensource/dataservices",
+  "revision": "android-8.1"
+},
+{
+  "remote": "omnirom",
+  "repository": "android_device_qcom_caf-sepolicy",
+  "target_path": "device/qcom/sepolicy",
+  "revision": "android-8.1"
+},
+{
+  "remote": "omnirom",
+  "repository": "android_vendor_qcom_opensource_interfaces",
+  "target_path": "vendor/qcom/opensource/interfaces",
+  "revision": "android-8.1"
+ },
+ {
+  "remote": "omnirom",
+  "repository": "android_external_bson",
+  "target_path": "external/bson",
+  "revision": "android-7.1"
+ },
+ {
+  "remote": "omnirom",
+  "repository": "android_system_qcom",
+  "target_path": "system/qcom",
+  "revision": "android-8.1"
+ }
+]
