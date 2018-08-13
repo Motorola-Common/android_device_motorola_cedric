@@ -1,0 +1,6 @@
+# Start AKM executable
+service ecompassd /system/vendor/bin/akmd09912
+    class main
+    user compass
+    group compass misc input
+    disabled

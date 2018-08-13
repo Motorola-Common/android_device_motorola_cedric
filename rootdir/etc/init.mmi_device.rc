@@ -1,0 +1,58 @@
+on post-fs-data
+   # AK09912 calibration file directory
+   mkdir /data/misc/akmd 0770 system compass
+
+   # Sensor Hub calibration data directory
+   mkdir /data/misc/sensorhub 0770 system compass
+
+on boot
+   # STML0 driver parameter permissions
+   chown root oem_5004 /sys/module/stml0xx/parameters/irq_disable
+   chmod 0660 /sys/module/stml0xx/parameters/irq_disable
+
+   # change permission for capsensor
+   chmod 0660 /sys/class/capsense/enable
+   chown system system sys/class/capsense/enable
+
+   #STML0 device permissions
+   chown system compass /dev/stml0xx
+   chmod 0660 /dev/stml0xx
+   chown compass compass /dev/stml0xx_as
+   chmod 0660 /dev/stml0xx_as
+   chown compass compass /dev/stml0xx_ms
+   chmod 0660 /dev/stml0xx_ms
+   chown compass compass /dev/stml0xx_akm
+   chmod 0660 /dev/stml0xx_akm
+
+   # Change permission for fingerprint sensor
+   chown system oem_5004 /sys/bus/spi/devices/spi8.0/nav
+   chown system oem_5004 /sys/bus/spi/devices/spi8.0/clk_enable
+   chown system oem_5004 /sys/bus/spi/devices/spi8.0/dev_enable
+   chown system oem_5004 /sys/bus/spi/devices/spi8.0/irq
+   chown system oem_5004 /sys/bus/spi/devices/spi8.0/irq_cnt
+   chmod 0440 /sys/bus/spi/devices/spi8.0/irq_cnt
+
+   # Change ownership and permission for laser_sensor
+   chown system system /sys/kernel/range/enable_sar
+   chmod 0660 /sys/kernel/range/enable_sar
+   chown system system /sys/kernel/range/set_delay_ms
+   chmod 0660 /sys/kernel/range/set_delay_ms
+   chown system system /sys/kernel/range/near
+   chmod 0660 /sys/kernel/range/near
+
+   # Change ownership and permission for rear_sensor
+   chown system system /sys/class/i2c-dev/i2c-2/device/2-0049/enable_sar
+   chmod 0660 /sys/class/i2c-dev/i2c-2/device/2-0049/enable_sar
+   chown system system /sys/class/i2c-dev/i2c-2/device/2-0049/set_delay_ms
+   chmod 0660 /sys/class/i2c-dev/i2c-2/device/2-0049/set_delay_ms
+   chown system system /sys/class/i2c-dev/i2c-6/device/6-0049/enable_sar
+   chmod 0660 /sys/class/i2c-dev/i2c-6/device/6-0049/enable_sar
+   chown system system /sys/class/i2c-dev/i2c-6/device/6-0049/set_delay_ms
+   chmod 0660 /sys/class/i2c-dev/i2c-6/device/6-0049/set_delay_ms
+
+# Start Sensor daemon
+service motosh /system/vendor/bin/motosh boot
+    class main
+    user compass
+    group compass misc input
+    oneshot
