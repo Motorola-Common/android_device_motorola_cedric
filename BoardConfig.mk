@@ -16,6 +16,10 @@
 
 DEVICE_PATH := device/motorola/cedric
 
+# Asserts
+TARGET_OTA_ASSERT_DEVICE := cedric,cedric_retail
+
+# Kernel
 TARGET_KERNEL_CONFIG := cedric_defconfig
 
 # Partitions

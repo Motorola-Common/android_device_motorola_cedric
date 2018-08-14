@@ -14,6 +14,10 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# Overlay
+DEVICE_PACKAGE_OVERLAYS += \
+    $(LOCAL_PATH)/overlay
+
 # Camera
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/camera/msm8937_mot_camera.xml:system/etc/camera/msm8937_mot_camera.xml \
