@@ -14,19 +14,16 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-DEVICE_PATH := device/motorola/potter
+DEVICE_PATH := device/motorola/cedric
 
-TARGET_KERNEL_CONFIG := potter_defconfig
-
-# DT2W
-TARGET_TAP_TO_WAKE_NODE := "/sys/android_touch/doubletap2wake"
+TARGET_KERNEL_CONFIG := cedric_defconfig
 
 # Partitions
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216        #    16384 * 1024 mmcblk0p37
-BOARD_CACHEIMAGE_PARTITION_SIZE := 260014080      #   253920 * 1024 mmcblk0p52
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 33554432    #    16484 * 1024 mmcblk0p38
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3510353920    #  3428080 * 1024 mmcblk0p53
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 26401026048 # 25782252 * 1024 mmcblk0p54  
+BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456      #   262144 * 1024 mmcblk0p52
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3623878656    #  3538944 * 1024 mmcblk0p53
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 26403126272 # 25784303 * 1024 mmcblk0p54
 
 # Sensor
 USE_SENSOR_MULTI_HAL := true
@@ -49,4 +46,4 @@ MOT_SENSOR_HUB_FEATURE_GR := true
 TARGET_SPECIFIC_HEADER_PATH += $(PLATFORM_PATH)/include
 
 # inherit from the proprietary version
--include vendor/motorola/potter/BoardConfigVendor.mk
+-include vendor/motorola/cedric/BoardConfigVendor.mk
