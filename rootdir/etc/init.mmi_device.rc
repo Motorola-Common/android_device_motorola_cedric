@@ -50,9 +50,8 @@ on boot
    chown system system /sys/class/i2c-dev/i2c-6/device/6-0049/set_delay_ms
    chmod 0660 /sys/class/i2c-dev/i2c-6/device/6-0049/set_delay_ms
 
-# Start Sensor daemon
-service motosh /system/vendor/bin/motosh boot
-    class main
-    user compass
-    group compass misc input
-    oneshot
+# Sanders uses qcom sensor service
+service sensors /system/vendor/bin/sensors.qcom
+    class core
+    user root
+    group root

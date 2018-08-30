@@ -29,25 +29,11 @@ BOARD_CACHEIMAGE_PARTITION_SIZE := 268435456      #   262144 * 1024 mmcblk0p52
 BOARD_SYSTEMIMAGE_PARTITION_SIZE := 3623878656    #  3538944 * 1024 mmcblk0p53
 BOARD_USERDATAIMAGE_PARTITION_SIZE := 26403126272 # 25784303 * 1024 mmcblk0p54
 
-# Sensor
-USE_SENSOR_MULTI_HAL := true
-BOARD_USES_MOT_SENSOR_HUB := true
-BOARD_USES_CAP_SENSOR_SX9310 := true
-MOT_SENSOR_HUB_HW_TYPE_L0 := true
-MOT_AP_SENSOR_HW_REARPROX := true
-MOT_AP_SENSOR_HW_REARPROX_2 := true
-MOT_SENSOR_HUB_HW_AK09912 := true
-MOT_SENSOR_HUB_HW_BMI160 := true
-MOT_SENSOR_HUB_FEATURE_CHOPCHOP := true
-MOT_SENSOR_HUB_FEATURE_LIFT := true
-MOT_SENSOR_HUB_FEATURE_PEDO := true
-MOT_SENSOR_HUB_FEATURE_LA := true
-MOT_SENSOR_HUB_FEATURE_GR := true
-
 # inherit from motorola msm8953-common
 -include device/motorola/msm8953-common/BoardConfigCommon.mk
 
-TARGET_SPECIFIC_HEADER_PATH += $(PLATFORM_PATH)/include
+# Manifest (TEMP)
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
 
 # inherit from the proprietary version
 -include vendor/motorola/cedric/BoardConfigVendor.mk

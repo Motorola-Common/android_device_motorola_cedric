@@ -31,13 +31,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
-    libsensorhub \
-    motosh \
-    sensorhub.msm8953 \
-    sensors.msm8953 \
-    sensors.rp \
-    sensors.tof \
-    sensors.tof.vl53l0
+    android.hardware.sensors@1.0-service
 
 # Thermal
 PRODUCT_COPY_FILES += \
